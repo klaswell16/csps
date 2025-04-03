@@ -30,8 +30,7 @@ public class NQueens implements CSPProblem<Integer,Integer>{
         return neighbors;
     }
 
-    //NQueens does not have any pre-assigned variables
-    //so simply return an empty list.
+
     public List<Integer> getPreAssignedVariables(){
         return Collections.emptyList();
     }

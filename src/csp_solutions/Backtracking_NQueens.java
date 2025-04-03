@@ -26,14 +26,13 @@ public class Backtracking_NQueens extends BacktrackingSearch<Integer,Integer> {
             boolean hasSupport = false;
             for (int rowHead : getAllVariables().get(head).domain()) {
                 if (!conflicts(tail, rowTail, head, rowHead)) {
-                    //found a value at the head that supports this value at the tail
+
                     hasSupport = true;
                     break;
                 }
             }
             if (!hasSupport) {
-                //there is no value at the head that supports this tail value
-                //delete the value from the tail
+
                 itr.remove();
                 revised = true;
             }
@@ -41,13 +40,13 @@ public class Backtracking_NQueens extends BacktrackingSearch<Integer,Integer> {
         return revised;
     }
 
-    //a helper function for checking if two queens are in conflict
+
     private static boolean conflicts(int col1, int row1, int col2, int row2) {
         return (row1 == row2 || Math.abs(col1 - col2) == Math.abs(row1 - row2));
     }
 
 
-    //implements the MRV heuristic
+
     public Integer selectUnassigned(){
         int smallestDomain = csp.getN()+1;
         Variable<Integer,Integer> mrv = null;

@@ -54,7 +54,7 @@ public class Backtracking_Sudoku extends BacktrackingSearch<Square,Integer>{
      * @param args (no command-line argument is needed to run this program)
      */
     public static void main(String[] args) {
-        String filename = "./SudokuTestCases/TestCase10.txt";
+        String filename = "./SudokuTestCases/TestCase5.txt";
         Sudoku problem = new Sudoku(filename);
         Backtracking_Sudoku agent = new Backtracking_Sudoku(problem);
 

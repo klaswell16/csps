@@ -46,10 +46,10 @@ public abstract class BacktrackingSearch <X, V> {
         }
     }
 
-    //a map from variable names to variable objects
+
     private Map<X,Variable<X,V>> allVariables;
 
-    //keeps track of the variables that have been assigned so far
+
     private final Set<X> assigned;
 
     private final CSPProblem<X,V> problem;
@@ -57,7 +57,7 @@ public abstract class BacktrackingSearch <X, V> {
     public BacktrackingSearch(CSPProblem<X,V> problem){
         this.problem = problem;
         this.allVariables = problem.getAllVariables();
-        //populate the assigned set with the names of any pre-assigned variables
+
         this.assigned = new HashSet<>(problem.getPreAssignedVariables());
     }
 
@@ -162,7 +162,7 @@ public abstract class BacktrackingSearch <X, V> {
     public Map<X,Variable<X,V>> deepClone(){
         Map<X,Variable<X,V>> allVariablesClone = new HashMap<>();
         for(Variable<X,V> var : allVariables.values()){
-            //deep clone the variable domain
+
             Variable<X,V> varClone =
                     new Variable<>(var.name(), new LinkedList<>(var.domain()));
             allVariablesClone.put(var.name(),varClone);
@@ -196,7 +196,7 @@ public abstract class BacktrackingSearch <X, V> {
         return assigned.contains(name);
     }
 
-    //the two abstract methods below should be implemented in BacktrackingSearch_Sudoku.java
+
 
     /**
      * revise an arc to maintain arc consistency
